@@ -40,13 +40,6 @@ class Button():
     def contain(self, mouse):
         return self.rect.collidepoint(mouse)
 
-def lbl(txt, speed=0.01):
-    for char in txt:
-        print(char, end='')
-        sys.stdout.flush()
-        time.sleep(speed)
-    print('')
-
 def textt(text, x, y):
     x = x
     y = y
@@ -158,10 +151,7 @@ running = True
 clock = pygame.time.Clock()
 state_screen(state)
 while running:
-    # reduce frame rate FPS
     clock.tick(10)
-
-    # draw active buttons
     for button in active_buttons:
         button.draw()
 
