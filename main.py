@@ -110,6 +110,7 @@ def get_result(answers):
 
 
 def state_screen(state):
+    #main menu
     if state is None:
         active_buttons.clear()
         active_buttons.append(Button(150, 350, start_img, 0.6, 'start'))
@@ -118,6 +119,7 @@ def state_screen(state):
         textt1('Welcome to Akinator!', 780, 300)
         textt('Think about someone in COM. I will try to guess who is it :>', 785, 410)
         textt('Answer the questions with click on right answer', 785, 500)
+    #question screen
     elif state < len(questions):
         active_buttons.clear()
         active_buttons.append(Button(150, 350, yes_img, 0.6, 1))
@@ -125,6 +127,7 @@ def state_screen(state):
         screen.fill(background_colour)
         textt1(f'Question {state+1}/{len(questions)}', 780, 300)
         textt(questions[state], 785, 410)
+    #result screen
     else:
         active_buttons.clear()
         active_buttons.append(Button(325, 350, start_img, 0.6, 'start'))
